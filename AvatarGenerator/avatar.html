@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Avatar Generator</title>
+
+
+    <script>
+        window.onload = function () {
+            // background 
+            var bg = new Image();
+            var bgnum = Math.floor(Math.random() * 43) + 1;
+            var bgname = "bg/bg-" + bgnum + ".png"
+            bg.src = bgname;
+
+
+            // face
+            var avatarface = new Image();
+            var avatarfacenum = Math.floor(Math.random() * 1) + 1;
+            var avatarfacename = "face/face-" + avatarfacenum + ".png"
+            avatarface.src = avatarfacename;
+
+            // huddi
+            var huddi = new Image();
+            var huddinum = Math.floor(Math.random() * 6) + 1;
+            var huddiname = "huddi/HUDDI_" + huddinum + ".png"
+            huddi.src = huddiname;
+
+            // eye
+            var eye = new Image();
+            var eyenum = Math.floor(Math.random() * 17) + 1;
+            var eyename = "eye/eye_" + eyenum + ".png"
+            eye.src = eyename;
+
+            // mouth
+            var mouth = new Image();
+            var mouthnum = Math.floor(Math.random() * 12) + 1;
+            var mouthname = "mouth/mouth-" + mouthnum + ".png"
+            mouth.src = mouthname;
+
+            // hat
+            //var hat = new Image();
+            //var hatnum = Math.floor(Math.random() * 8) + 1;
+            //var hatname = "hat/hat-" + hatnum + ".png"
+            //hat.src = hatname;
+			
+			// necklace
+            var necklace = new Image();
+            var necklacenum = Math.floor(Math.random() * 5) + 1;
+            var necklacename = "necklace/necklace-" + necklacenum + ".png"
+            necklace.src = necklacename;
+           
+
+            // mask
+            var mask = new Image();
+            var masknum = Math.floor(Math.random() * 11) + 1;
+            var maskname = "mask/mask-" + masknum + ".png"
+            mask.src = maskname;
+
+	    
+
+            // background loaded
+            bg.onload = function () {
+                buildavatar();
+            }
+
+            // face loaded
+            avatarface.onload = function () {
+                buildavatar();
+            }
+
+            // huddi loaded
+            huddi.onload = function () {
+                buildavatar();
+            }
+
+            // eye loaded
+            eye.onload = function () {
+                buildavatar();
+            }
+
+            // mouth loaded
+            mouth.onload = function () {
+                buildavatar();
+            }
+
+            // hat loaded
+            //hat.onload = function () {
+              //  buildavatar();
+            //}
+		 // necklace loaded
+            necklace.onload = function () {
+                buildavatar();
+            
+            }
+
+           //  mask loaded
+            mask.onload = function () {
+                buildavatar();
+            }
+            setTimeout(function () {
+                var canvas = document.getElementById("canvas");
+                image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+                var link = document.createElement('a');
+                link.download = "avatar.png";
+                link.href = image;
+                link.click();
+            }, 2000);
+
+
+            function buildavatar() {
+                var canvas = document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = 1600;
+                canvas.height = 1800;
+
+                // draw main
+                ctx.drawImage(bg, ((1600 - bg.width) / 2), 0);
+                // draw face
+                ctx.drawImage(avatarface, ((1600 - avatarface.width) / 2), 0);
+                // draw huddi
+                ctx.drawImage(huddi, ((1600 - huddi.width) / 2), 0);
+                // draw eye
+                ctx.drawImage(eye, ((1600 - eye.width) / 2), 0);
+                // draw mouth
+                ctx.drawImage(mouth, ((1600 - mouth.width) / 2), 0);
+                // draw hat
+                //ctx.drawImage(hat, ((1600 - hat.width) / 2), 0);
+                // draw necklace
+                ctx.drawImage(necklace, ((1600 - necklace.width) / 2), 0);
+                // draw mask
+                ctx.drawImage(mask, ((1600 - mask.width) / 2), 0);
+
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark">
+    <div align="center">
+        <br>
+        <h3 class="text-light">Avatar Generator</h3>
+        <br>
+        <div class="card bg-dark" style="width: 35rem;">
+            <canvas id="canvas" class="card-img-top" style="border:5px solid #000000;">
+            </canvas>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <button class="btn btn-primary" onclick="window.location.reload();">Generate</button>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container" align="center">
+            <span class="text-light text-muted">© All Copyright Reserved By Arun Yadav. Developed by <a
+                    href="http://www.me.israfil.xyz">Israfil Islam</a> with love &#9825; </span>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+<script>
+
+</script>
+
+</html>
